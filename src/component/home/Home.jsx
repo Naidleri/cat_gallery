@@ -30,8 +30,8 @@ export const Home = () => {
         </h1>
       </div>
       <div className="ras-image relative bg-orange-950 max-w-[1700px] mx-auto top-40 grid grid-cols-3 gap-4">
-        <div className="persia bg-slate-300 mx-auto ">
-          <img src={Persia} alt="" className="" />
+        <div className="persia bg-slate-300 mx-auto  ">
+          <img src={Persia} alt="" className="w-12" />
           <h1>Persia</h1>
         </div>
       </div>
