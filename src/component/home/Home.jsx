@@ -34,6 +34,10 @@ export const Home = () => {
           <img src={Persia} alt="" className="w-12" />
           <h1>Persia</h1>
         </div>
+        <div className="persia bg-slate-300 mx-auto  ">
+          <img src={Persia} alt="" className="w-12" />
+          <h1>Persia</h1>
+        </div>
       </div>
     </div>
   );
