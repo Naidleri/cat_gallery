@@ -1,6 +1,6 @@
 import React from "react";
 import Persia from "../../images/home/persia-home.jpg";
-export const Home = () => {
+export const Galleryhome= () => {
   return (
     <div>
       <div className="desc relative mx-auto max-w-[1500px] top-20 text-center">
@@ -29,15 +29,14 @@ export const Home = () => {
           Berbagai macam ras kucing yang ada
         </h1>
       </div>
-      <div className="ras-image relative bg-orange-950 max-w-[1700px] mx-auto top-40 grid grid-cols-3 gap-4">
-        <div className="persia bg-slate-300 mx-auto  ">
-          <img src={Persia} alt="" className="w-12" />
-          <h1>Persia</h1>
+      <div className="ras-image relative  max-w-[1200px] mx-auto top-40 grid grid-cols-3 gap-4">
+        <div className="persia  mx-auto  ">
+          <img src={Persia} alt="" className="object-cover w-[300px] h-[300px]" />
+          <h1 className="text-center font-medium pt-3">Persia</h1>
         </div>
- 
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Galleryhome;

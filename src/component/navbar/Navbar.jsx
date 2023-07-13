@@ -9,9 +9,9 @@ function Navbar() {
       <nav>
         <div className="relative">
           <img src={catHeader} alt="Cat Header" className="brightness-50" />
-          <div className="Navbar absolute top-[1.7rem] left-[180px] flex items-center justify-center z-10">
+          {/* <div className="Navbar absolute top-[1.7rem] left-[180px] flex items-center justify-center z-10">
             <Searchbar />
-          </div>
+          </div> */}
           <h1 className="absolute inset-0  text-center justify-center items-center text-7xl text-white font-bold py-3 hidden md:flex ">
             CAT
             <br />
@@ -26,11 +26,13 @@ function Navbar() {
             CatLy
           </h1>
           <ul className="hidden md:flex pr-10 text-white">
-            <li className="px-4 pt-4 hover:underline"> Home</li>
+            <li className="px-4 pt-4 hover:underline">
+              <Link to="/">Home</Link>
+            </li>
             <li className="px-4 pt-4 hover:underline">
               <Link to="./gallery">Gallery</Link>
             </li>
-            <li className="px-4 pt-4 hover:underline">About Us</li>
+            <li className="px-4 pt-4 hover:underline"> About</li>
             <li className="px-4 pt-4 hover:underline">Contact</li>
           </ul>
         </div>
