@@ -1,6 +1,6 @@
 import React from "react";
 import catHeader from "../../images/cat-header.png";
-import Searchbar from "../searchbar/Searchbar";
+// import Searchbar from "../searchbar/Searchbar";
 import { Link } from "react-router-dom";
 function Navbar() {
   const handleClick = () => {};

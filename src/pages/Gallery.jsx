@@ -1,9 +1,9 @@
 import React from "react";
-import Galleryhome from "../component/galleryhome/GalleryHome";
+import Navbar from "../component/navbar/Navbar";
 export const Gallery = () => {
   return (
     <>
-      <h1>Gallery</h1>
+      <Navbar/>
     </>
   );
 };
