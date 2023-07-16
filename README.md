@@ -1,1 +1,1 @@
-# cat-gallery
+# cat-gallery practice project
