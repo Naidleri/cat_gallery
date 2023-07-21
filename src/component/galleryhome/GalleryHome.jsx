@@ -1,19 +1,21 @@
 import React from "react";
 import Persia from "../../images/home/persia.jpg";
 import Siamese from "../../images/home/siamese.jpg";
-import Bengal from "../../images/home/ragdoll.jpg";
-import Ragdoll from "../../images/home/norwegianforest.jpg";
-import Norwegian from "../../images/home/bengal.jpg";
+import Bengal from "../../images/home/bengal.jpg";
+import Ragdoll from "../../images/home/ragdoll.jpg";
+import Norwegian from "../../images/home/norwegianforest.jpg";
 import Scottfish from "../../images/home/scottish-fold.jpg";
+import { Link } from "react-router-dom";
 
 const images = [
-  { src: Persia, caption: "Persia" },
-  { src: Siamese, caption: "Siamese" },
-  { src: Bengal, caption: "Bengal" },
-  { src: Ragdoll, caption: "Ragdoll" },
-  { src: Norwegian, caption: "Norwegian Forest" },
-  { src: Scottfish, caption: "Scottish Fold" },
+  { src: Persia, jenis: "persia", caption: "Persia" },
+  { src: Siamese, jenis: "siamese", caption: "Siamese" },
+  { src: Bengal, jenis: "bengal", caption: "Bengal" },
+  { src: Ragdoll, jenis: "ragdoll", caption: "Ragdoll" },
+  { src: Norwegian, jenis: "norwegian", caption: "Norwegian Forest" },
+  { src: Scottfish, jenis: "scottish", caption: "Scottish Fold" },
 ];
+
 const Galleryhome = () => {
   return (
     <div>
@@ -44,14 +46,18 @@ const Galleryhome = () => {
           Macam - macam kucing ras
         </h1>
       </div>
-      <div className="ras-image relative  max-w-[1200px] mx-auto top-40 grid grid-cols-3 gap-4 p-4">
+      <div className="ras-image relative  max-w-[1200px] mx-auto top-40  md:grid grid-cols-3 gap-4 p-4">
         {images.map((image, index) => (
-          <div key={index} className="list  mx-auto  ">
-            <img
-              src={image.src}
-              alt=""
-              className="object-cover w-[300px] h-[300px]"
-            />
+          <div key={index} className="list  mx-auto  items-center">
+            <Link to={`/detailkucing/${image.jenis}`}>
+              <div className="flex justify-center">
+                <img
+                  src={image.src}
+                  alt=""
+                  className="object-cover w-[300px] h-[300px]"
+                />
+              </div>
+            </Link>
             <h1 className="text-center font-medium pt-1">{image.caption}</h1>
           </div>
         ))}

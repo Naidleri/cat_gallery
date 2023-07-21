@@ -1,15 +1,13 @@
 import React from "react";
 import catHeader from "../../images/cat-header.png";
 import { Link, useParams } from "react-router-dom";
-import "./navbar.css";
 import Persia from "../../images/navbar/persia.jpg";
 import Siamese from "../../images/navbar/siamese.jpg";
-import Bengal from "../../images/navbar/ragdoll.jpg";
-import Ragdoll from "../../images/navbar/norwegian.jpg";
-import Norwegian from "../../images/navbar/bengal.jpg";
+import Bengal from "../../images/navbar/bengal.jpg";
+import Ragdoll from "../../images/navbar/ragdoll.jpg";
+import Norwegian from "../../images/navbar/norwegian.jpg";
 import Scottfish from "../../images/navbar/scottish.jpg";
-import { GiHamburgerMenu } from 'react-icons/gi';
-
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   const { jenis } = useParams();
@@ -113,8 +111,13 @@ const Navbar = () => {
       <nav>
         <div>{getImage(jenis)}</div>
         <div className="absolute top-0 left-0 flex py-6 w-full justify-between mx-auto max-w-[1920px]">
-          <h1 className="px-10 text-4xl font-bold text-white mb-4 hidden md:block">CatLy</h1>
-          <GiHamburgerMenu className="md:hidden ml-6 " style={{color:"white" , transform: 'scale(1.3)'}}/>
+          <h1 className="px-10 text-4xl font-bold text-white mb-4 hidden md:block">
+            CatLy
+          </h1>
+          <GiHamburgerMenu
+            className="md:hidden ml-6 "
+            style={{ color: "white", transform: "scale(1.3)" }}
+          />
           <ul className="hidden md:flex pr-10 text-white">
             <li className="px-4 pt-4 hover:underline">
               <Link to="/">Home</Link>
@@ -123,7 +126,6 @@ const Navbar = () => {
               <Link to="./gallery">Gallery</Link>
             </li>
             <li className="px-4 pt-4 hover:underline"> About</li>
-            <li className="px-4 pt-4 hover:underline">Contact</li>
           </ul>
         </div>
       </nav>
