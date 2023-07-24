@@ -1,9 +1,50 @@
-import React from 'react'
-
+import React, { useState } from "react";
+import persia from "../../images/persia/cat-g308c18de4_1280.jpg";
+import { IoMdArrowDropdown } from "react-icons/io";
 export const Main = () => {
-  return (
-    <div>Main</div>
-  )
-}
+  const [isOpen, SetisOpen] = useState(false);
 
-export default Main
+  const handleClick = () => {
+    SetisOpen(!isOpen);
+  };
+
+  return (
+    <div className="relative top-10 mx-auto max-w-[1200px] border-2 rounded-md   grid grid-cols-[200px,1000px]">
+      <div className="category-list max-w-[200px] h-full shadow-md  bg-white">
+        <button
+          id="dropdown"
+          className="relative font-semibold text-2xl mx-auto flex justify-center top-10"
+          type="button"
+          onClick={handleClick}
+        >
+          Category
+          <IoMdArrowDropdown className="top-1.5 relative" />
+        </button>
+        <div
+          id="dropdowmmenu"
+          className={`w-full relative ${
+            isOpen ? "" : "hidden"
+          } grid grid-rows-6 mx-auto  justify-center max-w-[150px] top-12 mb-5 text-xl  `}
+        >
+          <a href="/" className=" mb-2 text-center">Persia</a>
+          <a href="/" className=" mb-2 text-center">Siamese</a>
+          <a href="/" className=" mb-2 text-center">Bengal</a>
+          <a href="/" className=" mb-2 text-center">Ragdoll</a>
+          <a href="/" className=" mb-2 text-center">Norwegian</a>
+          <a href="/" className=" mb-2 text-center">Scottish</a>
+          <a href="/" className=" mb-2 text-center">Semua</a>
+        </div>
+      </div>
+      <div className="">
+        <img
+          src={persia}
+          alt=""
+          style={{ transform: "scale(0.3)" }}
+          className=""
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Main;
