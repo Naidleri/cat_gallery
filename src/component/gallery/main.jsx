@@ -1,21 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import axios from "axios";
-export const Main = () => {
-  const [isOpen, SetisOpen] = useState(false);
+import { Link } from "react-router-dom";
+
+const Main = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedBreed, setSelectedBreed] = useState(
+    "pers , siam , beng , ragd ,norw , sfol "
+  );
+  const [images, setImages] = useState([]);
 
   const handleClick = () => {
-    SetisOpen(!isOpen);
+    setIsOpen(!isOpen);
+  };
+  const handleBreedChange = (event) => {
+    setSelectedBreed(event.target.value);
   };
 
-  useEffect (() => {
-    axios.get('https://thecatapi.com'),
-    then(Response => {
-      const imageUrl = response.data[0].url;
-      setCatImage (imageUrl)
-    })
-  })
-  .catch()
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${selectedBreed}&api_key=live_nZIxyegOtiZ7kpTLRDWjtGABHATV05G6H7DyCWxUl9FkZylBSfBUYMNnTTjjUaki `
+      )
+      .then((response) => {
+        setImages(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, [selectedBreed]);
+
   return (
     <div className="relative top-10 mx-auto max-w-[1200px] border-2 rounded-md   grid grid-cols-[200px,1000px]">
       <div className="category-list max-w-[200px] h-full shadow-md  bg-white">
@@ -34,30 +48,81 @@ export const Main = () => {
             isOpen ? "" : "hidden"
           } grid grid-rows-6 mx-auto  justify-center max-w-[150px] top-12 mb-5 text-xl  `}
         >
-          <a href="/" className=" mb-2 text-center">
+          <Link
+            to=""
+            className="mb-2 text-center"
+            value="pers"
+            onClick={() => handleBreedChange({ target: { value: "pers" } })}
+          >
             Persia
-          </a>
-          <a href="/" className=" mb-2 text-center">
+          </Link>
+          <Link
+            to=""
+            className="mb-2 text-center"
+            value="siam"
+            onClick={() => handleBreedChange({ target: { value: "siam" } })}
+          >
             Siamese
-          </a>
-          <a href="/" className=" mb-2 text-center">
+          </Link>
+          <Link
+            to=""
+            className="mb-2 text-center"
+            value="beng"
+            onClick={() => handleBreedChange({ target: { value: "beng" } })}
+          >
             Bengal
-          </a>
-          <a href="/" className=" mb-2 text-center">
+          </Link>
+          <Link
+            to=""
+            className="mb-2 text-center"
+            value="ragd"
+            onClick={() => handleBreedChange({ target: { value: "ragd" } })}
+          >
             Ragdoll
-          </a>
-          <a href="/" className=" mb-2 text-center">
+          </Link>
+          <Link
+            to=""
+            className="mb-2 text-center"
+            value="norw"
+            onClick={() => handleBreedChange({ target: { value: "norw" } })}
+          >
             Norwegian
-          </a>
-          <a href="/" className=" mb-2 text-center">
-            Scottish
-          </a>
-          <a href="/" className=" mb-2 text-center">
+          </Link>
+          <Link
+            to=""
+            className="mb-2 text-center"
+            value="scts"
+            onClick={() => handleBreedChange({ target: { value: "sfol" } })}
+          >
+            scottish
+          </Link>
+          <Link
+            to=""
+            className="mb-2 text-center"
+            value=""
+            onClick={() =>
+              handleBreedChange({
+                target: { value: "pers , siam , beng , ragd ,norw , sfol " },
+              })
+            }
+          >
             Semua
-          </a>
+          </Link>
         </div>
       </div>
-      <div className=""></div>
+      <div className="cat API">
+        <div className="grid grid-col-3">
+          {images.map((breed) => (
+            <img
+              key={breed.id}
+              src={breed.url}
+              alt={`Cat ${breed.id}`}
+              // style={{ transform: "scale(0.2)" }}
+              className="grid grid-cols-4"
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
