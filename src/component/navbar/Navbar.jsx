@@ -123,9 +123,11 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="px-4 pt-4 hover:underline">
-              <Link to="./gallery">Gallery</Link>
+              <Link to="/gallery">Gallery</Link>
             </li>
-            <li className="px-4 pt-4 hover:underline"> About</li>
+            <li className="px-4 pt-4 hover:underline">
+              <Link to="/about">About</Link>
+            </li>
           </ul>
         </div>
       </nav>

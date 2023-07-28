@@ -46,11 +46,11 @@ const Galleryhome = () => {
           Macam - macam kucing ras
         </h1>
       </div>
-      <div className="ras-image relative  max-w-[1200px] mx-auto top-40  md:grid grid-cols-3 gap-4 p-4">
+      <div className="ras-image relative max-w-[1200px] mx-auto top-40  md:grid grid-cols-3 gap-4 p-4">
         {images.map((image, index) => (
           <div key={index} className="list  mx-auto  items-center">
             <Link to={`/detailkucing/${image.jenis}`}>
-              <div className="flex justify-center">
+              <div className="flex justify-center ">
                 <img
                   src={image.src}
                   alt=""

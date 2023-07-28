@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -26,10 +26,12 @@ const Main = () => {
         setImages(response.data);
       })
       .catch((error) => {
+        <h1>Load image error</h1>
         console.error("Error fetching data:", error);
       });
   }, [selectedBreed]);
 
+  const imageDefault = useMemo(() => images, [images]);
   return (
     <div className="relative top-10 mx-auto max-w-[1200px] border-2 rounded-md   grid grid-cols-[200px,1000px]">
       <div className="category-list max-w-[200px] h-full shadow-md  bg-white">
@@ -110,18 +112,16 @@ const Main = () => {
           </Link>
         </div>
       </div>
-      <div className="cat API">
-        <div className="grid grid-col-3">
-          {images.map((breed) => (
-            <img
-              key={breed.id}
-              src={breed.url}
-              alt={`Cat ${breed.id}`}
-              // style={{ transform: "scale(0.2)" }}
-              className="grid grid-cols-4"
-            />
-          ))}
-        </div>
+      <div className="cat API grid grid-cols-2">
+        {imageDefault.map((breed) => (
+          <img
+            key={breed.id}
+            src={breed.url}
+            alt={`Cat ${breed.id}`}
+            style={{ transform: "scale(0.7)" }}
+            className=""
+          />
+        ))}
       </div>
     </div>
   );
