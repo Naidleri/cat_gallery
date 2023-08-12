@@ -10,20 +10,16 @@ export const About = () => {
         <h2 className="text-2xl font-semibold mb-4">Tentang Kami</h2>
         <p>
           Cat Gallery adalah situs yang menyediakan koleksi foto-foto kucing
-          dari berbagai ras dan jenis. Tujuan kami adalah untuk menyajikan
+          dari beberapa ras dan jenis. Tujuan saya adalah untuk menyajikan
           foto-foto kucing yang indah dan menggemaskan, serta memberikan
-          informasi yang berguna tentang setiap ras kucing.
+          informasi yang berguna tentang beberapa ras kucing.
         </p>
         <p>
-          Tim kami terdiri dari para pecinta kucing yang antusias, yang
-          berkomitmen untuk memberikan pengalaman terbaik kepada pengunjung
-          situs ini. Jika Anda memiliki pertanyaan atau masukan, jangan ragu
-          untuk menghubungi kami melalui alamat email berikut:
-          contact@catgallery.com.
+          Saya membuat website ini sebagai portofolio dalam membuat webiste menggunakan React 
         </p>
         <p>
           Terima kasih telah mengunjungi Cat Gallery dan kami berharap Anda
-          menikmati penjelajahan Anda di situs kami!
+          menikmati penjelajahan situs kucing saya
         </p>
       </section>
       <Footer/>
