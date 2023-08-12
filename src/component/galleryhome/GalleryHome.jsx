@@ -18,8 +18,8 @@ const images = [
 
 const Galleryhome = () => {
   return (
-    <div>
-      <div className="desc relative mx-auto max-w-[1500px] top-20 text-center p-3">
+    <div className="h-[1150px]">
+      <div className="desc relative mx-auto max-w-[1500px] top-20 text-center p-3 ">
         <h1 className="mx-auto text-xl font-semibold  md:text-6xl  mb-6">
           Selamat Datang di web Cat Gallery!
         </h1>
@@ -46,7 +46,7 @@ const Galleryhome = () => {
           Macam - macam kucing ras
         </h1>
       </div>
-      <div className="ras-image relative max-w-[1200px] mx-auto top-40  md:grid grid-cols-3 gap-4 p-4">
+      <div className="ras-image relative max-w-[1200px] mx-auto top-40  md:grid grid-cols-3 gap-4 p-4 ">
         {images.map((image, index) => (
           <div key={index} className="list  mx-auto  items-center">
             <Link to={`/detailkucing/${image.jenis}`}>

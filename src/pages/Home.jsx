@@ -8,7 +8,7 @@ export const Home = () => {
     <>
       <Navbar />
       <Galleryhome/>
-      <Footer className='relative top-10 hidden' />
+      <Footer/>
     </>
   );
 };

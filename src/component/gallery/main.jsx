@@ -33,7 +33,7 @@ const Main = () => {
 
   const imageDefault = useMemo(() => images, [images]);
   return (
-    <div className="relative top-10 mx-auto max-w-[1200px] border-2 rounded-md   grid grid-cols-[200px,1000px]">
+    <div className="static mt-10 mb-10 mx-auto max-w-[1200px] border-2 rounded-md   grid grid-cols-[200px,1000px] ">
       <div className="category-list max-w-[200px] h-full shadow-md  bg-white">
         <button
           id="dropdown"
