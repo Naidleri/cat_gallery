@@ -1,1 +1,2 @@
-# cat-gallery practice project
+# introduction
+this is frontend practice personal project
